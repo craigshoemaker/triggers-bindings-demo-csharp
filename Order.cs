@@ -10,13 +10,6 @@ using Newtonsoft.Json;
 
 namespace Demo
 {
-    public class OrderMessage {
-        public string name { get; set; }
-        public string email { get; set; }
-        public string productId { get; set; }
-        public string quantity { get; set; }
-    }
-
     [StorageAccount("AzureWebJobsStorage")]
     public static class Order
     {
@@ -27,16 +20,10 @@ namespace Demo
             ILogger log)
         {
             string body = await new StreamReader(req.Body).ReadToEndAsync();
-            dynamic data = JsonConvert.DeserializeObject(body);
-            
-            var returnValue = new OrderMessage() {
-                name = data.name,
-                email =  data.email,
-                productId = data.productId,
-                quantity = data.quantity
-            };
-
-            return returnValue;
+            var message = JsonConvert.DeserializeObject<OrderMessage>(body);
+            message.orderId = Guid.NewGuid().ToString();
+            message.key = "web";
+            return message;
         }
     }
 }
