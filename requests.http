@@ -1,0 +1,11 @@
+
+# Order
+POST http://127.0.0.1:7071/api/order HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Otto Parts",
+  "email": "otto@ottoparts.com",
+  "productId": 1001,
+  "quantity": 10
+}
