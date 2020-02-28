@@ -6,11 +6,9 @@ using Newtonsoft.Json;
 
 namespace Demo
 {
-    public class OrderHistory {
-        public string name { get; set; }
-        public string email { get; set; }
-        public string quantity { get; set; }
-        public string date { get;set; }
+    public class OrderInfo {
+        public string id { get; set; }
+        public string key { get; set; }
     }
 
     public static class OrdersQueueTrigger
