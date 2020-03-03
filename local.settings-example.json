@@ -3,6 +3,9 @@
   "Values": {
     "AzureWebJobsStorage": "YOUR_STORAGE_CONNECTION_STRING",
     "AzureCosmosDB": "YOUR_COSMOSDB_CONNECTION_STRING",
+    "TwilioAccountSid": "YOUR_TWILIO_ACCOUNT_SID",
+    "TwilioAuthToken": "YOUR_TWILIO_AUTH_TOKEN",
+    "SendGridAPIKey": "YOUR_SENDGRID_API_KEY",
     "FUNCTIONS_WORKER_RUNTIME": "dotnet"
   }
 }
