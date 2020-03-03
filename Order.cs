@@ -22,7 +22,6 @@ namespace Demo
             string body = await new StreamReader(req.Body).ReadToEndAsync();
             var message = JsonConvert.DeserializeObject<OrderMessage>(body);
             message.orderId = Guid.NewGuid().ToString();
-            message.key = "web";
             return message;
         }
     }
